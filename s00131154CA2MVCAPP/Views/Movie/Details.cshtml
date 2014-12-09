@@ -1,0 +1,91 @@
+﻿@using s00131154CA2MVCAPP.Models
+@model s00131154CA2MVCAPP.Models.Movie
+
+<div class="container" style="color:white">
+    <h2>@ViewBag.PageTitle</h2>
+    <div class="lead">
+
+        <div class="container container-fluid">
+
+            <fieldset>
+                <legend>Movie</legend>
+                <div class="row">
+                    <div class=" col-xs-3">
+                        @Html.DisplayNameFor(model => model.Title)
+                    </div>
+                    <div class="display-label col-xs-2">
+                        @Html.DisplayNameFor(model => model.Director)
+                    </div>
+                    <div class="display-label col-xs-1">
+                        @Html.DisplayNameFor(model => model.Writer)
+                    </div>
+                   
+                    <div class="display-label col-xs-1">
+                        @Html.DisplayNameFor(model => model.Genre)
+                    </div>
+                    <div class="display-label col-xs-1">
+                        @Html.DisplayNameFor(model => model.ReleaseDate)
+                    </div>
+                    <div class="display-label col-xs-1">
+                        @Html.DisplayNameFor(model => model.Runtime)
+                    </div>
+                    <div class="display-label col-xs-2">
+                        @Html.DisplayNameFor(model => model.AgeCertificate)
+                    </div>
+                    <div class="display-label col-xs-1">
+                        @Html.DisplayNameFor(model => model.Rating)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="display-field  col-xs-3">
+                        @Html.DisplayFor(model => model.Title)
+                    </div>
+
+
+                    <div class="display-field col-xs-2">
+                        @Html.DisplayFor(model => model.Director)
+                    </div>
+
+
+                    <div class="display-field col-xs-1">
+                        @Html.DisplayFor(model => model.Writer)
+                    </div>
+
+
+
+
+
+                    <div class="display-field col-xs-1">
+                        @Html.DisplayFor(model => model.Genre)
+                    </div>
+
+
+                    <div class="display-field col-xs-1">
+                        @Html.DisplayFor(model => model.ReleaseDate)
+                    </div>
+
+
+                    <div class="display-field col-xs-1">
+                        @Html.DisplayFor(model => model.Runtime)
+                    </div>
+
+
+                    <div class="display-field col-xs-2">
+                        @Html.DisplayFor(model => model.AgeCertificate)
+                    </div>
+
+
+                    <div class="display-field col-xs-1">
+                        @Html.DisplayFor(model => model.Rating)
+                    </div>
+                    </div>
+            </fieldset>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.MovieID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+    </div>
+</div>

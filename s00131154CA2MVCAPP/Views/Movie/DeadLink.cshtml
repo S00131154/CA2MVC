@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "DeadLink";
+}
+<div class="container-fluid">
+    <h2>Non-essential links lead to here</h2>
+    <h3>@Html.ActionLink("Return to Home", "Index")</h3>
+</div>
+@section scripts
+    {
+    <script>
+            $(function () { //ready
+                toastr.info('This is one of many dead links, implemented purely for design. Click the return button to return to Home.');
+            });
+
+    </script>
+
+}

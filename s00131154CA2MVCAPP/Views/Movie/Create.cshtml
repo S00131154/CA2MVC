@@ -1,0 +1,124 @@
+﻿@model s00131154CA2MVCAPP.Models.Movie
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Movie</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Director)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Director)
+            @Html.ValidationMessageFor(model => model.Director)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Writer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Writer)
+            @Html.ValidationMessageFor(model => model.Writer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Producer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Producer)
+            @Html.ValidationMessageFor(model => model.Producer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExecutiveProducer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExecutiveProducer)
+            @Html.ValidationMessageFor(model => model.ExecutiveProducer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Editing)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Editing)
+            @Html.ValidationMessageFor(model => model.Editing)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MusicBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MusicBy)
+            @Html.ValidationMessageFor(model => model.MusicBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Genre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Genre)
+            @Html.ValidationMessageFor(model => model.Genre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReleaseDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ReleaseDate)
+            @Html.ValidationMessageFor(model => model.ReleaseDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Runtime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Runtime)
+            @Html.ValidationMessageFor(model => model.Runtime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AgeCertificate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AgeCertificate)
+            @Html.ValidationMessageFor(model => model.AgeCertificate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Rating)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Rating)
+            @Html.ValidationMessageFor(model => model.Rating)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

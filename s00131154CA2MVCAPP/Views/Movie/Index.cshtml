@@ -1,0 +1,122 @@
+﻿@model IEnumerable<s00131154CA2MVCAPP.Models.Movie>
+
+<div class="container container-fluid" >
+    <div class="row" style="margin-top:25px;color:white">        
+        <div style="font-size:xx-large;" class="col-lg-4">Al's Allstar Movie Archive</div> 
+        <div class="col-sm-5"></div>        
+        <div class="col-sm-1">Contribute</div>
+        <div class="col-sm-1">App</div>
+        <div class="col-sm-1">Help</div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">@Html.ActionLink("+ Add New Movie", "Create", null, new { @class = "btn btn-info" })</div>
+        <div class="col-sm-1">@Html.ActionLink("Login", "DeadLink",null, new { @class = "btn  btn-info" })</div>
+        <div class="col-sm-1">@Html.ActionLink("Signup", "DeadLink",null, new { @class = "btn btn-info " })</div>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.MovieID }, new { @class = "btn btn-info btn-xs" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MovieID }, new { @class = "btn btn-info btn-xs" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MovieID }, new { @class = "btn btn-info btn-xs" })
+            @Html.ActionLink("Edit", "Edit", new { id = item.MovieID }, new { @class = "btn btn-info btn-xs" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MovieID }, new { @class = "btn btn-info btn-xs" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MovieID }, new { @class = "btn btn-info btn-xs" })*@
+        </div>
+
+    <div class="row form-group-lg">
+        <ul style="width: 70%;
+    margin: auto;" class="nav navbar-nav">
+            <li><span style="margin-top:15px;margin-right:15px;border:hidden;color:white" class="glyphicon glyphicon-search img-circle" aria-hidden="true"></span></li>
+            <li><input type="text" class="form-control" placeholder="Search"></li>
+        </ul>
+    </div>
+
+
+    <div class="jumbotron" style="margin-top:35px;background-color:#FFC0FF">
+        <h2>@ViewBag.PageTitle</h2>
+        @* USE THE MOVIE DB .ORG AS A SAMPLE **************************** *@                    
+        
+
+        @*<div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="http://goo.gl/wlzNVu"></iframe>
+        </div>*@
+
+        
+        <table class="table table-condensed table-striped">
+            @*<tr class="row"></tr>*@
+            <tr @*class="row"*@>
+                <th class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Director)
+                </th>
+                
+                <th class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Genre)
+                </th>
+                <th>
+                    <a  class="btn btn-xs btn-info col-sm-2" href="@Url.Action("Index",new{sortOrder=@ViewBag.dateOrder})">
+                        @if (ViewBag.dateOrder == "ascDate")
+                        {
+                            <span class="glyphicon glyphicon-arrow-down" aria-hidden="false"></span>
+                        }
+                        else if (ViewBag.dateOrder == "descDate")
+                        {
+                            <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+
+                        }
+                        &nbsp;StartDate
+                    </a>
+                </th>
+                
+                <th class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Rating)
+                </th>                
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="col-sm-1">
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td class="col-sm-1">
+                        @Html.DisplayFor(modelItem => item.Director)
+                    </td>
+                    
+                    <td class="col-sm-1">
+                        @Html.DisplayFor(modelItem => item.Genre)
+                    </td>
+
+                    <td class="col-sm-1">
+                        @Html.DisplayFor(modelItem => item.ReleaseDate)
+                    </td>
+                    
+                    <td class="col-sm-2">
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td class="col-xs-2">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.MovieID }, new { @class = "btn btn-info btn-xs" }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.MovieID }, new { @class = "btn btn-info btn-xs" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.MovieID }, new { @class = "btn btn-info btn-xs" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>   
+    @section scripts
+    {
+        <script>
+            $(function () { //ready
+                toastr.info('Add a Movie by clicking "Create a Movie"');
+            });
+
+        </script>
+
+    }
+

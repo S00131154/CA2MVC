@@ -1,0 +1,103 @@
+﻿@model s00131154CA2MVCAPP.Models.Movie
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Movie</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Director)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Director)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Writer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Writer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Producer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Producer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExecutiveProducer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExecutiveProducer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Editing)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Editing)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MusicBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MusicBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Genre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Genre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ReleaseDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReleaseDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Runtime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Runtime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgeCertificate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgeCertificate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rating)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rating)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
